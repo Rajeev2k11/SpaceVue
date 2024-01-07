@@ -82,8 +82,18 @@ The project relies on the following major dependencies:
 
 
 
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run build
+```
+
+## Demo
 
 
+https://singular-cuchufli-763766.netlify.app
 ## Contributing
 
 Contributions are always welcome!
