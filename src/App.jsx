@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Chart from './components/Chart'
 import Footer from './components/Footer'
 import Login from './components/Login'
+import { useState } from 'react'
 // import Login from './components/Login'
 // import {
 //   BrowserRouter as Router,
@@ -15,13 +16,16 @@ import Login from './components/Login'
 // } from "react-router-dom";
 
 function App() {
- 
+ const [isLoggedIn,setLoggedIn] = useState(false)
+
+ if(!isLoggedIn) {
+  return <Login setLoggedIn={setLoggedIn} />
+}
   return (
     <>
      {/* <Login /> */}
-     <Header />
+     <Header setLoggedIn={setLoggedIn}/>
      <Routes>
-      <Route index element={<Login />}/>
       <Route path='/dashboard' element={<Dashboard />}/>
       <Route path='/charts' element={<Chart />}/>
       

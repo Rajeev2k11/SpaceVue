@@ -2,7 +2,7 @@
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom'; // If you are using React Router
 
-const Header = () => {
+const Header = ({setLoggedIn}) => {
   return (
     <AppBar position="static" style={styles.appBar}>
       <Toolbar>
@@ -16,6 +16,9 @@ const Header = () => {
           </Button>
           <Button component={Link} to="/charts" color="inherit" style={styles.button}>
             Charts
+          </Button>
+          <Button onClick={()=>setLoggedIn(false)}  color="inherit" style={styles.button}>
+            Logout
           </Button>
           {/* Add more buttons as needed */}
         </div>

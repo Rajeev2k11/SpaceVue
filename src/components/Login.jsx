@@ -4,7 +4,7 @@ import { TextField, Button, Container, Typography, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = () => {
+const Login = ({setLoggedIn}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const Login = () => {
 
     if (username === dummyUsername && password === dummyPassword) {
       // Redirect to the dashboard on successful login
-      navigate('/dashboard')
+      setLoggedIn(true)
     } else {
       // Handle unsuccessful login (display an error message)
       alert('Invalid credentials');
